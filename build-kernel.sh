@@ -14,6 +14,6 @@ cp ./kvm/*.h   ./$LINUX_FOLDER/arch/x86/kvm/
 # build kernel
 pushd $LINUX_FOLDER
 make -j`nproc`
-sudo make -j`nproc` modules_install
+sudo make -j`nproc` modules_install INSTALL_MOD_STRIP=--strip-unneeded
 sudo make -j`nproc` install
 popd
